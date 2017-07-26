@@ -25,8 +25,13 @@ export default class HomeScreen extends Component{
 		}, 1000);
 	}
 	
-	_handlePress(){
-		alert("something")
+	componentWillUnMount(){
+		clearInterval(this.heartSizeInterval);
+	}
+	
+	_handlePress(viewName){
+		clearInterval(this.heartSizeInterval);
+		this.props.setView(viewName);
 	}
 	
 	render(){
@@ -48,7 +53,7 @@ export default class HomeScreen extends Component{
 					<Button	containerStyle={{padding:10, height:50, overflow:'hidden', borderRadius:4, backgroundColor: 'red'}}
 									style={{fontSize: 20, color: 'white', width: 200}}
 		      				styleDisabled={{color: 'red'}}
-		      				onPress={() => this._handlePress()}>
+		      				onPress={() => this._handlePress('tap')}>
 		      				Tap Heart Rate
 					</Button>
 				</View>
@@ -56,7 +61,7 @@ export default class HomeScreen extends Component{
 					<Button	containerStyle={{padding:10, height:50, overflow:'hidden', borderRadius:4, backgroundColor: 'red'}}
 									style={{fontSize: 20, color: 'white', width: 200}}
 		      				styleDisabled={{color: 'red'}}
-		      				onPress={() => this._handlePress()}>
+		      				onPress={() => this._handlePress('learn')}>
 		      				Learn How
 					</Button>
 				</View>
