@@ -38,6 +38,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'flex-start',
     justifyContent: 'center',
-		marginTop: 25
+		marginTop: 25,
+		height:75
   },
 })

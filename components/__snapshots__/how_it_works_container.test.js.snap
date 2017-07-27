@@ -4,17 +4,20 @@ exports[`renders correctly 1`] = `
 <View
   style={
     Object {
+      "alignItems": "flex-start",
+      "alignSelf": "stretch",
+      "backgroundColor": "#fff",
       "flex": 1,
+      "justifyContent": "center",
     }
   }
 >
   <View
     style={
       Object {
-        "alignItems": "center",
-        "backgroundColor": "#fff",
-        "flex": 1,
-        "justifyContent": "center",
+        "alignSelf": "stretch",
+        "borderBottomColor": "black",
+        "borderBottomWidth": 1,
       }
     }
   >
@@ -23,14 +26,77 @@ exports[`renders correctly 1`] = `
       allowFontScaling={true}
       disabled={false}
       ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "textAlign": "left",
+        }
+      }
     >
-      How It Works
+      Step 1
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 15,
+          "fontWeight": "normal",
+          "paddingBottom": 20,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+        }
+      }
+    >
+      Tap your finger along with the heart beat below.  Continue tapping.  
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "textAlign": "left",
+        }
+      }
+    >
+      Step 2
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 15,
+          "fontWeight": "normal",
+          "paddingBottom": 20,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+        }
+      }
+    >
+      Once your tapped rate is within +/- 2 beats per minute, a heart rate will appear.  Just keep tapping until the heart rate appears.
     </Text>
   </View>
   <View
     style={
       Object {
-        "alignItems": "center",
+        "alignItems": "flex-start",
+        "alignSelf": "stretch",
         "backgroundColor": "#fff",
         "flex": 1,
         "justifyContent": "center",
