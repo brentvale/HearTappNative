@@ -16,7 +16,7 @@ export default class App extends Component{
 		this.setView = this.setView.bind(this);
 		this.viewFromState = this.viewFromState.bind(this);	
 	}
-	
+
 	viewFromState(){
 		switch(this.state.displayScreen){
 		case "home":
