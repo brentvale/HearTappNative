@@ -16,9 +16,7 @@ exports[`renders correctly 1`] = `
     allowFontScaling={true}
     disabled={false}
     ellipsizeMode="tail"
-  >
-    ""
-  </Text>
+  />
   <View
     style={
       Object {

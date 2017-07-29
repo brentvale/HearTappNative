@@ -21,16 +21,23 @@ export default class HeartBeating extends Component{
 	}
 	
 	componentDidMount(){
-		this.beatHeart();
+		this.beatHeart({bpmRate: this.props.bpmRate});
+	}
+	
+	componentWillReceiveProps(nextProps){
+		if(nextProps.bpmRate !== this.props.bpmRate){
+			clearInterval(this.heartSizeInterval);
+			this.beatHeart({bpmRate: nextProps.bpmRate});
+		}
 	}
 	
 	componentWillUnmount(){
 		clearInterval(this.heartSizeInterval);
 	}
 	
-	beatHeart(){
+	beatHeart(rateObj){
 		//calculate miliseconds between beats from props
-		const timeIntervalFromBeatsPerMinute = 60/this.props.bpmRate * 1000;
+		const timeIntervalFromBeatsPerMinute = 60/rateObj.bpmRate * 1000;
 		
 		this.heartSizeInterval = setInterval(() => {
 			this.setState({heartSize: LARGE_HEART_SIZE});

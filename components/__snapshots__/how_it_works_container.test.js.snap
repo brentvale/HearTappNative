@@ -12,12 +12,211 @@ exports[`renders correctly 1`] = `
     }
   }
 >
+  <Modal
+    animationType="slide"
+    hardwareAccelerated={false}
+    onRequestClose={[Function]}
+    transparent={false}
+    visible={false}
+  >
+    <View
+      style={
+        Object {
+          "marginTop": 40,
+        }
+      }
+    >
+      <View>
+        <View
+          accessibilityComponentType={undefined}
+          accessibilityLabel={undefined}
+          accessibilityTraits={undefined}
+          accessible={true}
+          hasTVPreferredFocus={undefined}
+          hitSlop={undefined}
+          isTVSelectable={true}
+          nativeID={undefined}
+          onLayout={undefined}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Array [
+              Object {
+                "backgroundColor": "transparent",
+              },
+              undefined,
+            ]
+          }
+          testID={undefined}
+          tvParallaxProperties={undefined}
+        >
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+          />
+        </View>
+      </View>
+      <View
+        style={
+          Object {
+            "alignSelf": "stretch",
+            "flex": 1,
+            "flexDirection": "column",
+          }
+        }
+      >
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            60
+             bpm
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f2f2f2",
+                "height": 150,
+                "justifyContent": "center",
+                "marginLeft": 20,
+                "marginRight": 20,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Tap heart rate at 
+              60
+               to see the results here.
+            </Text>
+          </View>
+        </View>
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            100
+             bpm
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f2f2f2",
+                "height": 150,
+                "justifyContent": "center",
+                "marginLeft": 20,
+                "marginRight": 20,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Tap heart rate at 
+              100
+               to see the results here.
+            </Text>
+          </View>
+        </View>
+        <View>
+          <Text
+            accessible={true}
+            allowFontScaling={true}
+            disabled={false}
+            ellipsizeMode="tail"
+            style={
+              Object {
+                "fontSize": 20,
+                "textAlign": "center",
+              }
+            }
+          >
+            130
+             bpm
+          </Text>
+          <View
+            style={
+              Object {
+                "alignItems": "center",
+                "backgroundColor": "#f2f2f2",
+                "height": 150,
+                "justifyContent": "center",
+                "marginLeft": 20,
+                "marginRight": 20,
+              }
+            }
+          >
+            <Text
+              accessible={true}
+              allowFontScaling={true}
+              disabled={false}
+              ellipsizeMode="tail"
+              style={
+                Object {
+                  "textAlign": "center",
+                }
+              }
+            >
+              Tap heart rate at 
+              130
+               to see the results here.
+            </Text>
+          </View>
+        </View>
+      </View>
+    </View>
+  </Modal>
   <View
     style={
       Object {
         "alignSelf": "stretch",
-        "borderBottomColor": "black",
+        "backgroundColor": "#f2f2f2",
+        "borderBottomColor": "#767676",
         "borderBottomWidth": 1,
+        "paddingTop": 20,
       }
     }
   >
@@ -48,13 +247,13 @@ exports[`renders correctly 1`] = `
         Object {
           "fontSize": 15,
           "fontWeight": "normal",
-          "paddingBottom": 20,
+          "paddingBottom": 15,
           "paddingLeft": 10,
           "paddingRight": 10,
         }
       }
     >
-      Tap your finger along with the heart beat below.  Continue tapping.  
+      Tap your finger along with the heart beat. Tap inside the box with the white background below.  
     </Text>
     <Text
       accessible={true}
@@ -83,14 +282,213 @@ exports[`renders correctly 1`] = `
         Object {
           "fontSize": 15,
           "fontWeight": "normal",
-          "paddingBottom": 20,
+          "paddingBottom": 15,
           "paddingLeft": 10,
           "paddingRight": 10,
         }
       }
     >
-      Once your tapped rate is within +/- 2 beats per minute, a heart rate will appear.  Just keep tapping until the heart rate appears.
+      It takes a minimum of 
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "fontWeight": "bold",
+          }
+        }
+      >
+        5
+      </Text>
+       taps for a heart rate to appear.  When your tapped rate is within +/- 2 beats per minute, the heart rate will display in green.
     </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "color": "red",
+          "fontSize": 20,
+          "fontWeight": "bold",
+          "paddingLeft": 10,
+          "paddingRight": 10,
+          "textAlign": "left",
+        }
+      }
+    >
+      Step 3
+    </Text>
+    <Text
+      accessible={true}
+      allowFontScaling={true}
+      disabled={false}
+      ellipsizeMode="tail"
+      style={
+        Object {
+          "fontSize": 15,
+          "fontWeight": "normal",
+          "paddingBottom": 15,
+          "paddingLeft": 10,
+          "paddingRight": 10,
+        }
+      }
+    >
+      Complete heart rates for 60bpm, 100bpm, and 130bpm. 
+    </Text>
+  </View>
+  <View
+    style={
+      Object {
+        "alignSelf": "stretch",
+        "borderBottomColor": "#767676",
+        "borderBottomWidth": 1,
+        "flexDirection": "row",
+        "height": 60,
+      }
+    }
+  >
+    <View
+      accessibilityComponentType={undefined}
+      accessibilityLabel={undefined}
+      accessibilityTraits={undefined}
+      accessible={true}
+      hasTVPreferredFocus={undefined}
+      hitSlop={undefined}
+      isTVSelectable={true}
+      nativeID={undefined}
+      onLayout={undefined}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Array [
+          Object {
+            "backgroundColor": "transparent",
+          },
+          Object {
+            "borderRightColor": "#767676",
+            "borderRightWidth": 1,
+            "flex": 1,
+          },
+        ]
+      }
+      testID={undefined}
+      tvParallaxProperties={undefined}
+    >
+      <View>
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+        />
+        <Text
+          accessible={true}
+          allowFontScaling={true}
+          disabled={false}
+          ellipsizeMode="tail"
+          style={
+            Object {
+              "color": "#767676",
+              "textAlign": "center",
+            }
+          }
+        >
+          Results
+        </Text>
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#767676",
+            "textAlign": "center",
+          }
+        }
+      >
+        60 bpm
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#767676",
+            "textAlign": "center",
+          }
+        }
+      >
+        100 bpm
+      </Text>
+    </View>
+    <View
+      style={
+        Object {
+          "flex": 1,
+        }
+      }
+    >
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      />
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+        style={
+          Object {
+            "color": "#767676",
+            "textAlign": "center",
+          }
+        }
+      >
+        130 bpm
+      </Text>
+    </View>
   </View>
   <View
     accessibilityComponentType={undefined}
@@ -150,8 +548,12 @@ exports[`renders correctly 1`] = `
           ellipsizeMode="tail"
           style={
             Object {
-              "fontSize": 30,
+              "borderColor": "white",
+              "borderWidth": 1,
+              "color": "#767676",
+              "fontSize": 40,
               "fontWeight": "bold",
+              "marginTop": 40,
             }
           }
         >
@@ -171,7 +573,7 @@ exports[`renders correctly 1`] = `
               "alignItems": "flex-start",
               "flex": 1,
               "justifyContent": "flex-start",
-              "paddingTop": 120,
+              "paddingTop": 80,
             }
           }
         >
@@ -183,6 +585,16 @@ exports[`renders correctly 1`] = `
           />
         </View>
       </View>
+      <Text
+        accessible={true}
+        allowFontScaling={true}
+        disabled={false}
+        ellipsizeMode="tail"
+      >
+        Target = 
+        60
+        bpm
+      </Text>
     </View>
   </View>
 </View>

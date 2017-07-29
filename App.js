@@ -35,7 +35,7 @@ export default class App extends Component{
 	
   render() {
 		const viewFromState = this.viewFromState();
-		const navigationBar = (this.state.displayScreen === "tap" || this.state.displayScreen === "learn") ? <NavigationBar setView={this.setView}/> : <Text>""</Text>;
+		const navigationBar = (this.state.displayScreen === "tap" || this.state.displayScreen === "learn") ? <NavigationBar setView={this.setView}/> : <Text></Text>;
     return (
       <View style={styles.container}>
 				{navigationBar}

@@ -5,7 +5,6 @@ import {Text, View, StyleSheet} from 'react-native';
 export default class NavigationBar extends Component{
 	constructor(){
 		super();
-		this._handlePress = this._handlePress.bind(this);
 	}
 	
 	_handlePress(viewName){
@@ -39,6 +38,5 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start',
     justifyContent: 'center',
 		marginTop: 25,
-		height:75
   },
 })
