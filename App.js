@@ -22,9 +22,9 @@ export default class App extends Component{
 		case "home":
 			return <HomeScreen setView={this.setView}/>;
 		case "tap":
-			return <TapHeartRateContainer setView={this.setView}/>;
+			return <TapHeartRateContainer/>;
 		case "learn":
-			return <HowItWorksContainer setView={this.setView} />;
+			return <HowItWorksContainer />;
 		default: return <HomeScreen />;
 		}
 	}
