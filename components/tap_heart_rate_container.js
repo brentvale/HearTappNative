@@ -10,6 +10,7 @@ import TimerMixin from 'react-timer-mixin';
 //once 5 taps have accumulated, heart averages the last 5 beats
 const TRAILING_AVERAGE = 5;
 const START_SHOWING_AFTER = 2;
+const SECONDS_TO_RESET = 3000; //Miliseconds
 
 export default class TapHeartRateContainer extends Component {
 	constructor(){
@@ -47,7 +48,7 @@ export default class TapHeartRateContainer extends Component {
 		//after 5 seconds of inactivity, it resets
 		this.timeOut = setTimeout(() => {
 			this.resetForNewRound();
-		}, 5000);
+		}, SECONDS_TO_RESET);
 	}
 	
 	resetForNewRound(){
@@ -104,13 +105,17 @@ export default class TapHeartRateContainer extends Component {
 	
 	render(){
 		const instructionText = (this.state.timestamps.length === 0) ? "Tap along with observed HR" : "";
-		const variabilityText = (this.state.variability == null) ? "" : "Variability: average of your last "
+		const variabilityText = (this.state.variability == null) ? "" : `Variability: average of your last ${TRAILING_AVERAGE} taps`;
 		let width = Dimensions.get('window').width;
 		let height = Dimensions.get('window').height;
 		let activeStyle = (this.state.variability && this.state.variability > 5) ? {color: 'red'} : {color: 'green'};
 
 		let variabilityStyle = Object.assign({},{textAlign:'center',flex: 1,flexDirection: 'column',alignSelf: 'stretch',fontSize: 30}, activeStyle);
-		
+		let previousHRDisplay = (this.state.previousCalculatedRates.length > 0) ? 
+																<View style={styles.pastHrDisplay}>
+																	<Text style={styles.pastHrText}>Previous:</Text>
+																	<Text style={styles.pastHrTextLarge}>{this.state.previousCalculatedRates[this.state.previousCalculatedRates.length-1]}</Text>
+																</View> : <Text></Text>;
 		
 		return (
 			<View style={{flex: 1}}>
@@ -121,11 +126,9 @@ export default class TapHeartRateContainer extends Component {
 						<Text style={styles.instructions}>{variabilityText}</Text>
 						<Text style={variabilityStyle}>{this.state.variability == null ? "" :'+/-'} {this.state.variability}</Text>
 						<View style={styles.filler}></View>
-
-						<View style={styles.pastHrDisplay}>
-							<Text style={styles.pastHrText}>Previous:</Text>
-							<Text style={styles.pastHrTextLarge}>{this.state.previousCalculatedRates[this.state.previousCalculatedRates.length-1]}</Text>
-						</View>
+						
+						{ previousHRDisplay }
+						
 					</View>
 				</TouchableHighlight>
 				<TouchableHighlight onPress={this.resetForNewRound} underlayColor="pink"  style={styles.buttonReset}>
