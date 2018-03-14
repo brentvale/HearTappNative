@@ -1,31 +1,45 @@
 import React, {Component} from 'react';
-import Button from 'react-native-button';
-import {Text, View, StyleSheet} from 'react-native';
+import {
+	View,
+	StyleSheet,
+	TouchableOpacity,
+	Text,
+} from 'react-native';
 
 export default class NavigationBar extends Component{
 	constructor(){
 		super();
 	}
 	
-	_handlePress(viewName){
-		this.props.setView(viewName);
-	}
-	
 	render(){
 		return(
 			<View style={styles.container}>
-				<Button	containerStyle={{padding:10, height:50, overflow:'hidden', borderRightColor: 'white', borderRightWidth: 2, backgroundColor: 'red'}}
-								style={{fontSize: 20, color: 'white', width: 200}}
-	      				styleDisabled={{color: 'red'}}
-	      				onPress={() => this._handlePress('tap')}>
-	      				Tap Heart Rate
-				</Button>
-				<Button	containerStyle={{padding:10, height:50, overflow:'hidden', backgroundColor: 'red'}}
-								style={{fontSize: 20, color: 'white', width: 200}}
-	      				styleDisabled={{color: 'red'}}
-	      				onPress={() => this._handlePress('learn')}>
-	      				Learn How
-				</Button>
+
+				<TouchableOpacity
+					onPress={() => this.props.setView('tap')}
+					style={[styles.buttonContainer,
+						{
+							borderRightWidth: StyleSheet.hairlineWidth,
+							borderRightColor: '#fff',
+          	}
+					]}>
+
+					<View style={styles.button}>
+						<Text style={styles.buttonText}>{'Tap Heart Rate'}</Text>
+					</View>
+
+				</TouchableOpacity>
+
+				<TouchableOpacity
+					onPress={() => this.props.setView('learn')}
+					style={styles.buttonContainer}>
+
+					<View style={styles.button}>
+						<Text style={styles.buttonText}>{'Learn How'}</Text>
+					</View>
+
+				</TouchableOpacity>
+
 			</View>
 		)
 	}
@@ -33,10 +47,26 @@ export default class NavigationBar extends Component{
 
 const styles = StyleSheet.create({
   container: {
+  	flex: 1,
 		flexDirection: 'row',
-    backgroundColor: '#fff',
-    alignItems: 'flex-start',
+    alignItems: 'center',
     justifyContent: 'center',
-		marginTop: 25,
   },
-})
+  buttonContainer: {
+  	flex: 1,
+		flexDirection: 'row',
+    backgroundColor: 'red',
+		height: '100%',
+	},
+	button: {
+    flex: 1,
+    flexDirection: 'row',
+		justifyContent: 'center',
+		alignItems: 'center',
+	},
+	buttonText: {
+  	color: '#fff',
+		fontFamily: 'System',
+		fontSize: 20,
+	}
+});

@@ -1,5 +1,9 @@
 import React, {Component} from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import {
+	StyleSheet,
+	Text,
+	View,
+} from 'react-native';
 
 import HomeScreen from './components/home_screen';
 import TapHeartRateContainer from './components/tap_heart_rate_container';
@@ -11,35 +15,32 @@ export default class App extends Component{
 		super();
 		this.state = {
 			//can be ["home", "tap", "learn"]
-			displayScreen: "home"
+			displayScreen: "home",
 		}
-		this.setView = this.setView.bind(this);
-		this.viewFromState = this.viewFromState.bind(this);	
-	}
-
-	viewFromState(){
-		switch(this.state.displayScreen){
-		case "home":
-			return <HomeScreen setView={this.setView}/>;
-		case "tap":
-			return <TapHeartRateContainer/>;
-		case "learn":
-			return <HowItWorksContainer />;
-		default: return <HomeScreen />;
-		}
-	}
+	};
 	
-	setView(view){
+	setView = (view) => {
 		this.setState({displayScreen: view});
-	}
+	};
 	
   render() {
-		const viewFromState = this.viewFromState();
-		const navigationBar = (this.state.displayScreen === "tap" || this.state.displayScreen === "learn") ? <NavigationBar setView={this.setView}/> : <Text></Text>;
+
     return (
       <View style={styles.container}>
-				{navigationBar}
-				{viewFromState}
+				{(this.state.displayScreen === "tap" || this.state.displayScreen === "learn") &&
+					<NavigationBar setView={this.setView}/>}
+
+				<View style={{flex: 9, flexDirection: 'row'}}>
+          {this.state.displayScreen === 'home' &&
+						<HomeScreen setView={this.setView}/>}
+
+          {this.state.displayScreen === 'tap' &&
+						<TapHeartRateContainer/>}
+
+          {this.state.displayScreen === 'learn' &&
+						<HowItWorksContainer/>}
+				</View>
+
       </View>
     );
   }
@@ -48,8 +49,7 @@ export default class App extends Component{
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+		flexDirection: 'column',
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
   },
 });
